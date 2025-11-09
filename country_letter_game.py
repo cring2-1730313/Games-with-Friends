@@ -1,19 +1,12 @@
 
-# Country Letter Guessing Game
-# -------------------------------------------------------------
-# Play: pick a letter, then guess every country that starts with it.aza
-# Type "done" when you want to stop guessing.
-#
-# Notes:
-# - Case-insensitive.
-# - Ignores accents and punctuation (e.g., "Cote d Ivoire" is accepted).
-# - Accepts common alternate names (e.g., "Ivory Coast" -> "Côte d'Ivoire").
-# - Country canon list = UN members + a few widely-used short names + 2 observers.
-# -------------------------------------------------------------
-
+import argparse
+import json
+import random
 import re
-import sys
 import unicodedata
+from pathlib import Path
+
+SCORE_FILE = Path.home() / ".country_letter_game_scores.json"
 
 def _norm(s: str) -> str:
     """Lowercase, strip accents, drop punctuation & extra spaces for robust matching."""
@@ -111,6 +104,7 @@ for alt, canon in ALT.items():
 
 # Build letter index from canonical (display) names
 from collections import defaultdict
+
 LETTER_INDEX = defaultdict(list)
 for c in COUNTRIES:
     display = c
@@ -118,9 +112,25 @@ for c in COUNTRIES:
     if first_char.isalpha():
         LETTER_INDEX[first_char].append(display)
 
+for letter, names in list(LETTER_INDEX.items()):
+    LETTER_INDEX[letter] = tuple(sorted(names))
+
+LETTER_CHOICES = tuple(sorted(LETTER_INDEX.keys()))
+
+
+def _safe_input(prompt: str) -> str | None:
+    """Wrap built-in input to return None instead of raising on EOF."""
+    try:
+        return input(prompt)
+    except EOFError:
+        return None
+
 def choose_letter() -> str:
     while True:
-        user = input("Pick a letter (A-Z): ").strip().upper()
+        user = _safe_input("Pick a letter (A-Z): ")
+        if user is None:
+            raise EOFError
+        user = user.strip().upper()
         if len(user) == 1 and user.isalpha():
             if user in LETTER_INDEX:
                 return user
@@ -128,6 +138,25 @@ def choose_letter() -> str:
                 print(f"No countries start with '{user}'. Try another letter.")
         else:
             print("Please enter a single letter A-Z.")
+
+
+def _print_help(letter: str, remaining_count: int):
+    print(
+        f"Commands: guess country names, 'hint' reveals part of a remaining country, "
+        f"'status' shows progress, 'done' quits. Letter = {letter}, "
+        f"{remaining_count} remaining."
+    )
+
+
+def _show_hint(remaining: set[str]):
+    if not remaining:
+        print("  • Nothing left to hint!")
+        return
+    target = random.choice(tuple(remaining))
+    reveal = target[:3]
+    obscured = reveal + "…" + "_" * max(0, len(target) - len(reveal) - 1)
+    print(f"  • Hint: {obscured} ({len(target)} letters)")
+
 
 def resolve_guess(raw: str) -> str | None:
     key = _norm(raw)
@@ -143,9 +172,105 @@ def resolve_guess(raw: str) -> str | None:
             return CANON[key2]
     return None
 
-def play_round():
-    letter = choose_letter()
-    targets = sorted(LETTER_INDEX[letter])
+
+def _resolve_letter_arg(letter_arg: str | None, random_letter: bool) -> str | None:
+    """Return a validated letter choice derived from CLI flags."""
+    if letter_arg and random_letter:
+        raise ValueError("Choose either --letter or --random-letter, not both.")
+    if random_letter:
+        return random.choice(LETTER_CHOICES)
+    if letter_arg:
+        candidate = letter_arg.strip().upper()
+        if len(candidate) != 1 or not candidate.isalpha():
+            raise ValueError("--letter expects a single character A-Z.")
+        if candidate not in LETTER_INDEX:
+            raise ValueError(f"No countries start with '{candidate}'.")
+        return candidate
+    return None
+
+
+def _load_scores(path: Path = SCORE_FILE) -> dict:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(data, dict):
+            return data
+    except FileNotFoundError:
+        pass
+    except (OSError, json.JSONDecodeError):
+        pass
+    return {}
+
+
+def _save_scores(scores: dict, path: Path = SCORE_FILE) -> None:
+    try:
+        path.write_text(json.dumps(scores, indent=2, sort_keys=True), encoding="utf-8")
+    except OSError:
+        pass
+
+
+def _announce_score(
+    letter: str,
+    found: int,
+    total: int,
+    scores: dict,
+    improved: bool,
+    prev_streak: int,
+):
+    def pct(value: float) -> int:
+        return round(value * 100)
+
+    letter_best = scores.get(letter)
+    ratio = found / total if total else 0.0
+    if improved:
+        print(f"New personal best for {letter}: {pct(ratio)}% ({found}/{total}).")
+    elif letter_best:
+        best_ratio = letter_best.get("ratio", 0.0)
+        print(
+            f"Personal best for {letter}: {pct(best_ratio)}% "
+            f"({letter_best.get('found', 0)}/{letter_best.get('total', total)})."
+        )
+
+    streak = scores.get("_perfect_streak", 0)
+    if found == total and total:
+        if streak == 1:
+            print("Perfect streak: 1 round.")
+        elif streak > 1:
+            print(f"Perfect streak: {streak} rounds.")
+    elif prev_streak:
+        print("Perfect streak reset.")
+
+
+def _record_score(letter: str, found: int, total: int, scores: dict):
+    ratio = found / total if total else 0.0
+    letter_best = scores.get(letter)
+    improved = False
+    if (
+        not letter_best
+        or ratio > letter_best.get("ratio", -1.0)
+        or (
+            ratio == letter_best.get("ratio", 0.0)
+            and found > letter_best.get("found", -1)
+        )
+    ):
+        scores[letter] = {"ratio": ratio, "found": found, "total": total}
+        improved = True
+
+    prev_streak = scores.get("_perfect_streak", 0)
+    streak = prev_streak
+    if total and found == total:
+        streak += 1
+    else:
+        streak = 0
+    scores["_perfect_streak"] = streak
+
+    _save_scores(scores)
+    _announce_score(letter, found, total, scores, improved, prev_streak)
+
+
+def play_round(letter: str | None = None, scores: dict | None = None) -> tuple[int, int]:
+    if letter is None:
+        letter = choose_letter()
+    targets = LETTER_INDEX[letter]
     remaining = set(targets)
     guessed = []
 
@@ -153,11 +278,24 @@ def play_round():
     print("Start guessing! (Type 'done' when you want to stop.)\n")
 
     while remaining:
-        guess = input("Your guess: ").strip()
+        guess = _safe_input("Your guess: ")
+        if guess is None:
+            break
+        guess = guess.strip()
         if not guess:
             continue
-        if guess.lower() in {"done", "quit", "exit"}:
+        lowered = guess.lower()
+        if lowered in {"done", "quit", "exit"}:
             break
+        if lowered == "help":
+            _print_help(letter, len(remaining))
+            continue
+        if lowered == "hint":
+            _show_hint(remaining)
+            continue
+        if lowered == "status":
+            print(f"  • Progress: {len(guessed)}/{len(targets)} found; {len(remaining)} left.")
+            continue
 
         match = resolve_guess(guess)
         if match is None:
@@ -186,8 +324,56 @@ def play_round():
     else:
         print("Perfect round — you got them all!")
 
+    if scores is not None:
+        _record_score(letter, len(guessed), len(targets), scores)
+
+    return len(guessed), len(targets)
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Country letter guessing game.")
+    parser.add_argument(
+        "--letter",
+        help="Start directly with this letter (skips the letter prompt).",
+    )
+    parser.add_argument(
+        "--random-letter",
+        action="store_true",
+        help="Pick a random starting letter that has at least one country.",
+    )
+    parser.add_argument(
+        "--rounds",
+        type=int,
+        default=1,
+        help="Number of rounds to play automatically (>=1).",
+    )
+    args = parser.parse_args(argv)
+
+    scores = _load_scores()
+
+    if args.rounds < 1:
+        parser.error("--rounds must be >= 1.")
+
+    try:
+        initial_letter = _resolve_letter_arg(args.letter, args.random_letter)
+    except ValueError as exc:
+        parser.error(str(exc))
+
+    for round_index in range(args.rounds):
+        if args.random_letter:
+            letter = random.choice(LETTER_CHOICES)
+        elif round_index == 0:
+            letter = initial_letter
+        else:
+            letter = None
+
+        play_round(letter, scores)
+
+    return 0
+
+
 if __name__ == "__main__":
     try:
-        play_round()
-    except KeyboardInterrupt:
+        raise SystemExit(main())
+    except (KeyboardInterrupt, EOFError):
         print("\nGoodbye!")
