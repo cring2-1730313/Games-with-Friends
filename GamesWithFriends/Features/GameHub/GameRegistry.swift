@@ -14,7 +14,8 @@ struct GameRegistry {
                 accentColor: .purple
             )),
             AnyGameDefinition(CountryLetterGame()),
-            AnyGameDefinition(Name5Game())
+            AnyGameDefinition(Name5Game()),
+            AnyGameDefinition(BorderBlitzGame())
         ]
     }
 }
