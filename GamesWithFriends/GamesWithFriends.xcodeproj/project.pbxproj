@@ -57,6 +57,17 @@
 		F10000010000000000000057 /* Name5PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000057 /* Name5PlayView.swift */; };
 		F10000010000000000000058 /* Name5ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000058 /* Name5ResultsView.swift */; };
 		F10000010000000000000059 /* Name5SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000059 /* Name5SetupView.swift */; };
+		F10000010000000000000060 /* BorderBlitzGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000060 /* BorderBlitzGame.swift */; };
+		F10000010000000000000061 /* BorderBlitzCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000061 /* BorderBlitzCountry.swift */; };
+		F10000010000000000000062 /* BorderBlitzDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000062 /* BorderBlitzDifficulty.swift */; };
+		F10000010000000000000063 /* BorderBlitzLetterTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000063 /* BorderBlitzLetterTile.swift */; };
+		F10000010000000000000064 /* BorderBlitzScoringConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000064 /* BorderBlitzScoringConfig.swift */; };
+		F10000010000000000000065 /* BorderBlitzCountryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000065 /* BorderBlitzCountryDataProvider.swift */; };
+		F10000010000000000000066 /* BorderBlitzViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000066 /* BorderBlitzViewModel.swift */; };
+		F10000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift */; };
+		F10000010000000000000068 /* BorderBlitzLetterTilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000068 /* BorderBlitzLetterTilesView.swift */; };
+		F10000010000000000000069 /* BorderBlitzMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000069 /* BorderBlitzMenuView.swift */; };
+		F10000010000000000000070 /* BorderBlitzGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000070 /* BorderBlitzGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +122,17 @@
 		F20000010000000000000057 /* Name5PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name5PlayView.swift; sourceTree = "<group>"; };
 		F20000010000000000000058 /* Name5ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name5ResultsView.swift; sourceTree = "<group>"; };
 		F20000010000000000000059 /* Name5SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name5SetupView.swift; sourceTree = "<group>"; };
+		F20000010000000000000060 /* BorderBlitzGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzGame.swift; sourceTree = "<group>"; };
+		F20000010000000000000061 /* BorderBlitzCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzCountry.swift; sourceTree = "<group>"; };
+		F20000010000000000000062 /* BorderBlitzDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzDifficulty.swift; sourceTree = "<group>"; };
+		F20000010000000000000063 /* BorderBlitzLetterTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzLetterTile.swift; sourceTree = "<group>"; };
+		F20000010000000000000064 /* BorderBlitzScoringConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzScoringConfig.swift; sourceTree = "<group>"; };
+		F20000010000000000000065 /* BorderBlitzCountryDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzCountryDataProvider.swift; sourceTree = "<group>"; };
+		F20000010000000000000066 /* BorderBlitzViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzViewModel.swift; sourceTree = "<group>"; };
+		F20000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzCountrySilhouetteView.swift; sourceTree = "<group>"; };
+		F20000010000000000000068 /* BorderBlitzLetterTilesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzLetterTilesView.swift; sourceTree = "<group>"; };
+		F20000010000000000000069 /* BorderBlitzMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzMenuView.swift; sourceTree = "<group>"; };
+		F20000010000000000000070 /* BorderBlitzGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +181,7 @@
 				F40000010000000000000030 /* CountryLetterGame */,
 				F40000010000000000000040 /* LicensePlateGame */,
 				F40000010000000000000050 /* Name5Game */,
+				F40000010000000000000060 /* BorderBlitz */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -389,6 +412,56 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F40000010000000000000060 /* BorderBlitz */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000060 /* BorderBlitzGame.swift */,
+				F40000010000000000000061 /* Models */,
+				F40000010000000000000062 /* Data */,
+				F40000010000000000000063 /* ViewModels */,
+				F40000010000000000000064 /* Views */,
+			);
+			path = BorderBlitz;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000061 /* BorderBlitzCountry.swift */,
+				F20000010000000000000062 /* BorderBlitzDifficulty.swift */,
+				F20000010000000000000063 /* BorderBlitzLetterTile.swift */,
+				F20000010000000000000064 /* BorderBlitzScoringConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000062 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000065 /* BorderBlitzCountryDataProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000063 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000066 /* BorderBlitzViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000064 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift */,
+				F20000010000000000000068 /* BorderBlitzLetterTilesView.swift */,
+				F20000010000000000000069 /* BorderBlitzMenuView.swift */,
+				F20000010000000000000070 /* BorderBlitzGameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -496,6 +569,17 @@
 				F10000010000000000000057 /* Name5PlayView.swift in Sources */,
 				F10000010000000000000058 /* Name5ResultsView.swift in Sources */,
 				F10000010000000000000059 /* Name5SetupView.swift in Sources */,
+				F10000010000000000000060 /* BorderBlitzGame.swift in Sources */,
+				F10000010000000000000061 /* BorderBlitzCountry.swift in Sources */,
+				F10000010000000000000062 /* BorderBlitzDifficulty.swift in Sources */,
+				F10000010000000000000063 /* BorderBlitzLetterTile.swift in Sources */,
+				F10000010000000000000064 /* BorderBlitzScoringConfig.swift in Sources */,
+				F10000010000000000000065 /* BorderBlitzCountryDataProvider.swift in Sources */,
+				F10000010000000000000066 /* BorderBlitzViewModel.swift in Sources */,
+				F10000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift in Sources */,
+				F10000010000000000000068 /* BorderBlitzLetterTilesView.swift in Sources */,
+				F10000010000000000000069 /* BorderBlitzMenuView.swift in Sources */,
+				F10000010000000000000070 /* BorderBlitzGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
