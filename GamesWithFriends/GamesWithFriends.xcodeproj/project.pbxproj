@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10000010000000000000080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000080 /* Assets.xcassets */; };
 		F10000010000000000000001 /* GamesWithFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000001 /* GamesWithFriendsApp.swift */; };
 		F10000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000002 /* ContentView.swift */; };
 		F10000010000000000000003 /* GameHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000003 /* GameHubView.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F20000010000000000000080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F00000010000000000000001 /* GamesWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20000010000000000000001 /* GamesWithFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithFriendsApp.swift; sourceTree = "<group>"; };
 		F20000010000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,17 @@
 		};
 /* End PBXFrameworksBuildPhase section */
 
+/* Begin PBXResourcesBuildPhase section */
+		F30000010000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10000010000000000000080 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXGroup section */
 		F40000010000000000000001 = {
 			isa = PBXGroup;
@@ -159,6 +172,7 @@
 			children = (
 				F20000010000000000000001 /* GamesWithFriendsApp.swift */,
 				F20000010000000000000002 /* ContentView.swift */,
+				F20000010000000000000080 /* Assets.xcassets */,
 				F40000010000000000000010 /* Features */,
 			);
 			name = GamesWithFriends;
@@ -471,6 +485,7 @@
 			buildPhases = (
 				F60000010000000000000001 /* Sources */,
 				F30000010000000000000001 /* Frameworks */,
+				F30000010000000000000002 /* Resources */,
 			);
 			buildRules = (
 			);

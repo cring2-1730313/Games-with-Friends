@@ -4,12 +4,11 @@
 //
 
 import Foundation
-import CoreGraphics
 
 struct BorderBlitzCountry: Identifiable, Codable {
     let id: String
     let name: String
-    let borderPoints: [CGPoint]
+    let imageName: String
 
     /// Alternate names that should be accepted as correct answers
     var alternateNames: [String] = []
