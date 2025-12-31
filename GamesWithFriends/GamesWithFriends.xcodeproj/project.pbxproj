@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		VC0000010000000000000001 /* VibeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000001 /* VibeCheckModels.swift */; };
+		VC0000010000000000000002 /* VibeCheckCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000002 /* VibeCheckCategoryData.swift */; };
+		VC0000010000000000000003 /* VibeCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000003 /* VibeCheckViewModel.swift */; };
+		VC0000010000000000000004 /* SpectrumSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000004 /* SpectrumSliderView.swift */; };
+		VC0000010000000000000008 /* VibeCheckHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000008 /* VibeCheckHomeView.swift */; };
+		VC0000010000000000000018 /* PromptEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000018 /* PromptEntryView.swift */; };
+		VC0000010000000000000019 /* TeamGuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000019 /* TeamGuessingView.swift */; };
+		VC0000010000000000000012 /* RevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000012 /* RevealView.swift */; };
+		VC0000010000000000000013 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000013 /* ScoreboardView.swift */; };
+		VC0000010000000000000014 /* VibeCheckGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000014 /* VibeCheckGameOverView.swift */; };
+		VC0000010000000000000015 /* PassDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000015 /* PassDeviceView.swift */; };
+		VC0000010000000000000016 /* VibeCheckRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000016 /* VibeCheckRootView.swift */; };
+		VC0000010000000000000017 /* VibeCheckGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000017 /* VibeCheckGame.swift */; };
+		4A883C5C2F04BC5A0046272B /* MovieChainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */; };
+		4A883C5D2F04BC5A0046272B /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C492F04BC5A0046272B /* GameMode.swift */; };
+		4A883C5E2F04BC5A0046272B /* MovieChainSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */; };
+		4A883C5F2F04BC5A0046272B /* MovieChainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C562F04BC5A0046272B /* MovieChainGameView.swift */; };
+		4A883C602F04BC5A0046272B /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C4A2F04BC5A0046272B /* GameState.swift */; };
+		4A883C612F04BC5A0046272B /* ChainBreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C542F04BC5A0046272B /* ChainBreakView.swift */; };
+		4A883C622F04BC5A0046272B /* MovieChainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C572F04BC5A0046272B /* MovieChainRootView.swift */; };
+		4A883C632F04BC5A0046272B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C4B2F04BC5A0046272B /* Player.swift */; };
+		4A883C642F04BC5A0046272B /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C552F04BC5A0046272B /* GameOverView.swift */; };
+		4A883C652F04BC5A0046272B /* MovieChainGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */; };
+		4A883C662F04BC5A0046272B /* ChainLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C482F04BC5A0046272B /* ChainLink.swift */; };
+		4A883C672F04BC5A0046272B /* MovieChainDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C502F04BC5A0046272B /* MovieChainDatabase.swift */; };
+		4A883C692F04BC5A0046272B /* moviechain_core.sqlite.gz in Resources */ = {isa = PBXBuildFile; fileRef = 4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */; };
 		F10000010000000000000001 /* GamesWithFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000001 /* GamesWithFriendsApp.swift */; };
 		F10000010000000000000003 /* GameHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000003 /* GameHubView.swift */; };
 		F10000010000000000000004 /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000004 /* GameDefinition.swift */; };
@@ -70,6 +96,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A883C482F04BC5A0046272B /* ChainLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLink.swift; sourceTree = "<group>"; };
+		4A883C492F04BC5A0046272B /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
+		4A883C4A2F04BC5A0046272B /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		4A883C4B2F04BC5A0046272B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "moviechain_core.sqlite.gz"; sourceTree = "<group>"; };
+		4A883C502F04BC5A0046272B /* MovieChainDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainDatabase.swift; sourceTree = "<group>"; };
+		4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainViewModel.swift; sourceTree = "<group>"; };
+		4A883C542F04BC5A0046272B /* ChainBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainBreakView.swift; sourceTree = "<group>"; };
+		4A883C552F04BC5A0046272B /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
+		4A883C562F04BC5A0046272B /* MovieChainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainGameView.swift; sourceTree = "<group>"; };
+		4A883C572F04BC5A0046272B /* MovieChainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainRootView.swift; sourceTree = "<group>"; };
+		4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainSetupView.swift; sourceTree = "<group>"; };
+		4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainGame.swift; sourceTree = "<group>"; };
 		F00000010000000000000001 /* GamesWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20000010000000000000001 /* GamesWithFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithFriendsApp.swift; sourceTree = "<group>"; };
 		F20000010000000000000003 /* GameHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHubView.swift; sourceTree = "<group>"; };
@@ -131,6 +170,19 @@
 		F20000010000000000000069 /* BorderBlitzMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzMenuView.swift; sourceTree = "<group>"; };
 		F20000010000000000000070 /* BorderBlitzGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderBlitzGameView.swift; sourceTree = "<group>"; };
 		F20000010000000000000080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		VC0000020000000000000001 /* VibeCheckModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckModels.swift; sourceTree = "<group>"; };
+		VC0000020000000000000002 /* VibeCheckCategoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckCategoryData.swift; sourceTree = "<group>"; };
+		VC0000020000000000000003 /* VibeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckViewModel.swift; sourceTree = "<group>"; };
+		VC0000020000000000000004 /* SpectrumSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumSliderView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000008 /* VibeCheckHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckHomeView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000018 /* PromptEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptEntryView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000019 /* TeamGuessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGuessingView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000012 /* RevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000013 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000014 /* VibeCheckGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckGameOverView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000015 /* PassDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000016 /* VibeCheckRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckRootView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000017 /* VibeCheckGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +196,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A883C4C2F04BC5A0046272B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C482F04BC5A0046272B /* ChainLink.swift */,
+				4A883C492F04BC5A0046272B /* GameMode.swift */,
+				4A883C4A2F04BC5A0046272B /* GameState.swift */,
+				4A883C4B2F04BC5A0046272B /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A883C4F2F04BC5A0046272B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4A883C512F04BC5A0046272B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C502F04BC5A0046272B /* MovieChainDatabase.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A883C532F04BC5A0046272B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A883C592F04BC5A0046272B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C542F04BC5A0046272B /* ChainBreakView.swift */,
+				4A883C552F04BC5A0046272B /* GameOverView.swift */,
+				4A883C562F04BC5A0046272B /* MovieChainGameView.swift */,
+				4A883C572F04BC5A0046272B /* MovieChainRootView.swift */,
+				4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4A883C5B2F04BC5A0046272B /* MovieChain */ = {
+			isa = PBXGroup;
+			children = (
+				4A883C4C2F04BC5A0046272B /* Models */,
+				4A883C4F2F04BC5A0046272B /* Resources */,
+				4A883C512F04BC5A0046272B /* Services */,
+				4A883C532F04BC5A0046272B /* ViewModels */,
+				4A883C592F04BC5A0046272B /* Views */,
+				4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */,
+			);
+			path = MovieChain;
+			sourceTree = "<group>";
+		};
 		F40000010000000000000001 = {
 			isa = PBXGroup;
 			children = (
@@ -173,12 +285,14 @@
 		F40000010000000000000010 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				4A883C5B2F04BC5A0046272B /* MovieChain */,
 				F40000010000000000000011 /* GameHub */,
 				F40000010000000000000020 /* ConversationStarters */,
 				F40000010000000000000030 /* CountryLetterGame */,
 				F40000010000000000000040 /* LicensePlateGame */,
 				F40000010000000000000050 /* Name5Game */,
 				F40000010000000000000060 /* BorderBlitz */,
+				VC0000030000000000000001 /* VibeCheck */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -413,6 +527,66 @@
 			path = BorderBlitz;
 			sourceTree = "<group>";
 		};
+		VC0000030000000000000001 /* VibeCheck */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000017 /* VibeCheckGame.swift */,
+				VC0000030000000000000002 /* Models */,
+				VC0000030000000000000003 /* Data */,
+				VC0000030000000000000004 /* ViewModels */,
+				VC0000030000000000000005 /* Views */,
+				VC0000030000000000000006 /* Components */,
+			);
+			path = VibeCheck;
+			sourceTree = "<group>";
+		};
+		VC0000030000000000000002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000001 /* VibeCheckModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		VC0000030000000000000003 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000002 /* VibeCheckCategoryData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		VC0000030000000000000004 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000003 /* VibeCheckViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		VC0000030000000000000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000008 /* VibeCheckHomeView.swift */,
+				VC0000020000000000000018 /* PromptEntryView.swift */,
+				VC0000020000000000000019 /* TeamGuessingView.swift */,
+				VC0000020000000000000012 /* RevealView.swift */,
+				VC0000020000000000000013 /* ScoreboardView.swift */,
+				VC0000020000000000000014 /* VibeCheckGameOverView.swift */,
+				VC0000020000000000000015 /* PassDeviceView.swift */,
+				VC0000020000000000000016 /* VibeCheckRootView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		VC0000030000000000000006 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				VC0000020000000000000004 /* SpectrumSliderView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F40000010000000000000061 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -509,6 +683,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A883C692F04BC5A0046272B /* moviechain_core.sqlite.gz in Resources */,
 				F10000010000000000000080 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +696,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F10000010000000000000001 /* GamesWithFriendsApp.swift in Sources */,
+				4A883C5C2F04BC5A0046272B /* MovieChainViewModel.swift in Sources */,
+				4A883C5D2F04BC5A0046272B /* GameMode.swift in Sources */,
+				4A883C5E2F04BC5A0046272B /* MovieChainSetupView.swift in Sources */,
+				4A883C5F2F04BC5A0046272B /* MovieChainGameView.swift in Sources */,
+				4A883C602F04BC5A0046272B /* GameState.swift in Sources */,
+				4A883C612F04BC5A0046272B /* ChainBreakView.swift in Sources */,
+				4A883C622F04BC5A0046272B /* MovieChainRootView.swift in Sources */,
+				4A883C632F04BC5A0046272B /* Player.swift in Sources */,
+				4A883C642F04BC5A0046272B /* GameOverView.swift in Sources */,
+				4A883C652F04BC5A0046272B /* MovieChainGame.swift in Sources */,
+				4A883C662F04BC5A0046272B /* ChainLink.swift in Sources */,
+				4A883C672F04BC5A0046272B /* MovieChainDatabase.swift in Sources */,
 				F10000010000000000000003 /* GameHubView.swift in Sources */,
 				F10000010000000000000004 /* GameDefinition.swift in Sources */,
 				F10000010000000000000005 /* GameRegistry.swift in Sources */,
@@ -579,6 +766,19 @@
 				F10000010000000000000068 /* BorderBlitzLetterTilesView.swift in Sources */,
 				F10000010000000000000069 /* BorderBlitzMenuView.swift in Sources */,
 				F10000010000000000000070 /* BorderBlitzGameView.swift in Sources */,
+				VC0000010000000000000001 /* VibeCheckModels.swift in Sources */,
+				VC0000010000000000000002 /* VibeCheckCategoryData.swift in Sources */,
+				VC0000010000000000000003 /* VibeCheckViewModel.swift in Sources */,
+				VC0000010000000000000004 /* SpectrumSliderView.swift in Sources */,
+				VC0000010000000000000008 /* VibeCheckHomeView.swift in Sources */,
+				VC0000010000000000000018 /* PromptEntryView.swift in Sources */,
+				VC0000010000000000000019 /* TeamGuessingView.swift in Sources */,
+				VC0000010000000000000012 /* RevealView.swift in Sources */,
+				VC0000010000000000000013 /* ScoreboardView.swift in Sources */,
+				VC0000010000000000000014 /* VibeCheckGameOverView.swift in Sources */,
+				VC0000010000000000000015 /* PassDeviceView.swift in Sources */,
+				VC0000010000000000000016 /* VibeCheckRootView.swift in Sources */,
+				VC0000010000000000000017 /* VibeCheckGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

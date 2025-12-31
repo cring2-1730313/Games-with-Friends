@@ -15,7 +15,9 @@ struct GameRegistry {
             )),
             AnyGameDefinition(CountryLetterGame()),
             AnyGameDefinition(Name5Game()),
-            AnyGameDefinition(BorderBlitzGame())
+            AnyGameDefinition(BorderBlitzGame()),
+            AnyGameDefinition(MovieChainGame()),
+            AnyGameDefinition(VibeCheckGame())
         ]
     }
 }
