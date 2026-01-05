@@ -1,0 +1,7 @@
+# Large data files (see GamesWithFriends/Features/MovieChain/DATA_FILES.md)
+*.tsv
+*.sqlite
+*.sqlite.gz
+
+# macOS
+.DS_Store
