@@ -1,7 +1,7 @@
 # Large data files (see Features/MovieChain/DATA_FILES.md for details)
+# Note: .sqlite.gz files are tracked via Git LFS for Xcode Cloud builds
 *.tsv
 *.sqlite
-*.sqlite.gz
 
 # Xcode user-specific files
 *.xcuserstate
