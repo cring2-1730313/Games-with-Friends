@@ -2,6 +2,7 @@ import SwiftUI
 
 struct VibeCheckHomeView: View {
     @ObservedObject var viewModel: VibeCheckViewModel
+    @Binding var selectedMode: VibeCheckGameMode
     @State private var showHowToPlay = false
 
     var body: some View {
@@ -10,11 +11,20 @@ struct VibeCheckHomeView: View {
                 // Header
                 headerSection
 
-                // Team count
-                teamCountSection
+                // Game Mode Selection
+                gameModeSection
 
-                // Players per team
-                playersPerTeamSection
+                // Mode-specific settings
+                if selectedMode == .classic {
+                    // Team count
+                    teamCountSection
+
+                    // Players per team
+                    playersPerTeamSection
+                } else {
+                    // Player count for competition mode
+                    playerCountSection
+                }
 
                 // Target score
                 targetScoreSection
@@ -42,11 +52,77 @@ struct VibeCheckHomeView: View {
             .ignoresSafeArea()
         }
         .sheet(isPresented: $showHowToPlay) {
-            HowToPlayView()
+            HowToPlayView(gameMode: selectedMode)
         }
     }
 
     // MARK: - Sections
+
+    private var gameModeSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Game Mode")
+                .font(.headline)
+
+            ForEach(VibeCheckGameMode.allCases) { mode in
+                VibeCheckGameModeCard(
+                    mode: mode,
+                    isSelected: selectedMode == mode,
+                    action: { selectedMode = mode }
+                )
+            }
+        }
+    }
+
+    private var playerCountSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Label("Players", systemImage: "person.fill")
+                .font(.headline)
+
+            HStack {
+                Button {
+                    if viewModel.competitionSettings.playerCount > 2 {
+                        viewModel.competitionSettings.playerCount -= 1
+                    }
+                } label: {
+                    Image(systemName: "minus.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(viewModel.competitionSettings.playerCount > 2 ? .primary : .secondary)
+                }
+                .disabled(viewModel.competitionSettings.playerCount <= 2)
+
+                Spacer()
+
+                Text("\(viewModel.competitionSettings.playerCount)")
+                    .font(.system(size: 48, weight: .bold, design: .rounded))
+                    .monospacedDigit()
+
+                Spacer()
+
+                Button {
+                    if viewModel.competitionSettings.playerCount < 10 {
+                        viewModel.competitionSettings.playerCount += 1
+                    }
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title2)
+                        .foregroundStyle(viewModel.competitionSettings.playerCount < 10 ? .primary : .secondary)
+                }
+                .disabled(viewModel.competitionSettings.playerCount >= 10)
+            }
+            .padding(.horizontal)
+
+            Text("Minimum 2 players")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity)
+        }
+        .padding()
+        .background {
+            RoundedRectangle(cornerRadius: 16)
+                .fill(Color(.systemBackground))
+                .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+        }
+    }
 
     private var headerSection: some View {
         VStack(spacing: 8) {
@@ -173,14 +249,20 @@ struct VibeCheckHomeView: View {
     }
 
     private var targetScoreSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        let currentScore = selectedMode == .classic ? viewModel.settings.targetScore : viewModel.competitionSettings.targetScore
+
+        return VStack(alignment: .leading, spacing: 12) {
             Label("Target Score", systemImage: "flag.checkered")
                 .font(.headline)
 
             HStack(spacing: 16) {
                 ForEach([300, 500, 750, 1000], id: \.self) { score in
                     Button {
-                        viewModel.settings.targetScore = score
+                        if selectedMode == .classic {
+                            viewModel.settings.targetScore = score
+                        } else {
+                            viewModel.competitionSettings.targetScore = score
+                        }
                     } label: {
                         Text("\(score)")
                             .font(.subheadline.weight(.medium))
@@ -188,9 +270,9 @@ struct VibeCheckHomeView: View {
                             .padding(.vertical, 10)
                             .background {
                                 RoundedRectangle(cornerRadius: 10)
-                                    .fill(viewModel.settings.targetScore == score ? Color.purple : Color(.systemGray5))
+                                    .fill(currentScore == score ? Color.purple : Color(.systemGray5))
                             }
-                            .foregroundStyle(viewModel.settings.targetScore == score ? .white : .primary)
+                            .foregroundStyle(currentScore == score ? .white : .primary)
                     }
                     .buttonStyle(.plain)
                 }
@@ -206,11 +288,15 @@ struct VibeCheckHomeView: View {
 
     private var continueButton: some View {
         Button {
-            viewModel.proceedToTeamSetup()
+            if selectedMode == .classic {
+                viewModel.proceedToTeamSetup()
+            } else {
+                viewModel.proceedToCompetitionPlayerSetup()
+            }
         } label: {
             HStack {
                 Image(systemName: "arrow.right.circle.fill")
-                Text("SET UP TEAMS")
+                Text(selectedMode == .classic ? "SET UP TEAMS" : "SET UP PLAYERS")
                     .fontWeight(.bold)
             }
             .frame(maxWidth: .infinity)
@@ -224,6 +310,52 @@ struct VibeCheckHomeView: View {
             }
             .foregroundStyle(.white)
             .clipShape(RoundedRectangle(cornerRadius: 16))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Game Mode Card
+
+struct VibeCheckGameModeCard: View {
+    let mode: VibeCheckGameMode
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 16) {
+                Image(systemName: mode.iconName)
+                    .font(.title2)
+                    .foregroundStyle(isSelected ? .white : .purple)
+                    .frame(width: 40)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(mode.name)
+                        .font(.headline)
+                        .foregroundStyle(isSelected ? .white : .primary)
+
+                    Text(mode.description)
+                        .font(.caption)
+                        .foregroundStyle(isSelected ? .white.opacity(0.8) : .secondary)
+                }
+
+                Spacer()
+
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundStyle(.white)
+                }
+            }
+            .padding()
+            .background(isSelected ? Color.purple : Color.clear)
+            .background(Color(.systemBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .shadow(color: .black.opacity(0.05), radius: 8, y: 4)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(isSelected ? Color.clear : Color.gray.opacity(0.3), lineWidth: 1)
+            )
         }
         .buttonStyle(.plain)
     }
@@ -339,6 +471,7 @@ struct TeamSetupCard: View {
 
 struct HowToPlayView: View {
     @Environment(\.dismiss) private var dismiss
+    var gameMode: VibeCheckGameMode = .classic
 
     var body: some View {
         NavigationStack {
@@ -346,25 +479,39 @@ struct HowToPlayView: View {
                 VStack(alignment: .leading, spacing: 24) {
                     // Overview
                     section(title: "Overview", icon: "info.circle.fill") {
-                        Text("A spectrum with polar opposites is shown (e.g., Trashy ↔ Classy). One player sees a target position and creates a prompt that matches it. The team then tries to guess where the prompt falls on the spectrum.")
+                        if gameMode == .classic {
+                            Text("A spectrum with polar opposites is shown (e.g., Trashy ↔ Classy). One player sees a target position and creates a prompt that matches it. The team then tries to guess where the prompt falls on the spectrum.")
+                        } else {
+                            Text("Competition Mode is a free-for-all version where every player competes individually. Pass the device around and try to match the Vibe Setter's target position!")
+                        }
                     }
 
-                    // Prompt Setter
-                    section(title: "Prompt Setter", icon: "person.fill.questionmark") {
+                    // Vibe Setter
+                    section(title: "Vibe Setter", icon: "person.fill.questionmark") {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("1. See the spectrum and target position")
-                            Text("2. Think of something that matches that position")
-                            Text("3. Example: Target is near 'Trashy' → 'Clipping your nails in a movie theater'")
+                            if gameMode == .competition {
+                                Text("1. A random player becomes the Vibe Setter each round")
+                            }
+                            Text(gameMode == .competition ? "2. They see the spectrum and target position" : "1. See the spectrum and target position")
+                            Text(gameMode == .competition ? "3. They create a prompt that matches the target" : "2. Think of something that matches that position")
+                            Text(gameMode == .competition ? "4. The Vibe Setter does NOT earn points" : "3. Example: Target is near 'Trashy' → 'Clipping your nails in a movie theater'")
                         }
                     }
 
                     // Guessing
-                    section(title: "Guessing Team", icon: "hand.tap.fill") {
+                    section(title: gameMode == .classic ? "Guessing Team" : "Guessing", icon: "hand.tap.fill") {
                         VStack(alignment: .leading, spacing: 8) {
-                            Text("1. See the spectrum and the prompt")
-                            Text("2. Discuss as a team")
-                            Text("3. Slide to where you think it belongs")
-                            Text("4. Lock in your guess!")
+                            if gameMode == .classic {
+                                Text("1. See the spectrum and the prompt")
+                                Text("2. Discuss as a team")
+                                Text("3. Slide to where you think it belongs")
+                                Text("4. Lock in your guess!")
+                            } else {
+                                Text("1. Each player takes a turn with the device")
+                                Text("2. See the spectrum and prompt")
+                                Text("3. Slide to where YOU think it belongs")
+                                Text("4. Pass to the next player (no peeking!)")
+                            }
                         }
                     }
 
@@ -376,6 +523,13 @@ struct HowToPlayView: View {
                             scoringRow(.good)
                             scoringRow(.okay)
                             scoringRow(.miss)
+                        }
+                    }
+
+                    // Winning (competition mode only)
+                    if gameMode == .competition {
+                        section(title: "Winning", icon: "trophy.fill") {
+                            Text("First player to reach the target score wins! The player with the worst guess each round gets a fun tease.")
                         }
                     }
                 }
@@ -424,5 +578,5 @@ struct HowToPlayView: View {
 }
 
 #Preview {
-    VibeCheckHomeView(viewModel: VibeCheckViewModel())
+    VibeCheckHomeView(viewModel: VibeCheckViewModel(), selectedMode: .constant(.classic))
 }

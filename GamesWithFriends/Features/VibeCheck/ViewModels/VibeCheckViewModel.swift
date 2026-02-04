@@ -7,6 +7,7 @@ class VibeCheckViewModel: ObservableObject {
     // MARK: - Published Properties
 
     @Published var settings: VibeCheckSettings = .defaultSettings
+    @Published var competitionSettings: CompetitionVibeCheckSettings = .defaultSettings
     @Published var teams: [VibeCheckTeam] = []
     @Published var currentRound: VibeCheckRound?
     @Published var rounds: [VibeCheckRound] = []
@@ -18,6 +19,9 @@ class VibeCheckViewModel: ObservableObject {
 
     // Current guessing team index
     @Published var currentGuessingTeamIndex: Int = 0
+
+    // Competition mode state - managed by CompetitionVibeCheckViewModel
+    // The VibeCheckViewModel just holds the settings for the home screen
 
     // MARK: - Computed Properties
 
@@ -107,6 +111,12 @@ class VibeCheckViewModel: ObservableObject {
     func proceedToTeamSetup() {
         setupTeams()
         gameState = .teamSetup
+    }
+
+    func proceedToCompetitionPlayerSetup() {
+        // This will trigger the root view to switch to competition mode flow
+        // The actual player setup is handled by CompetitionVibeCheckViewModel
+        gameState = .teamSetup  // Reusing teamSetup state to signal we're ready to set up players
     }
 
     func startGame() {

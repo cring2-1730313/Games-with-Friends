@@ -1,7 +1,7 @@
 # Large data files (see GamesWithFriends/Features/MovieChain/DATA_FILES.md)
+# Note: .sqlite.gz files are tracked via Git LFS for Xcode Cloud builds
 *.tsv
 *.sqlite
-*.sqlite.gz
 
 # macOS
 .DS_Store

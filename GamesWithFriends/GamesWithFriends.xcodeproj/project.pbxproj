@@ -7,19 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		VC0000010000000000000001 /* VibeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000001 /* VibeCheckModels.swift */; };
-		VC0000010000000000000002 /* VibeCheckCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000002 /* VibeCheckCategoryData.swift */; };
-		VC0000010000000000000003 /* VibeCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000003 /* VibeCheckViewModel.swift */; };
-		VC0000010000000000000004 /* SpectrumSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000004 /* SpectrumSliderView.swift */; };
-		VC0000010000000000000008 /* VibeCheckHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000008 /* VibeCheckHomeView.swift */; };
-		VC0000010000000000000018 /* PromptEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000018 /* PromptEntryView.swift */; };
-		VC0000010000000000000019 /* TeamGuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000019 /* TeamGuessingView.swift */; };
-		VC0000010000000000000012 /* RevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000012 /* RevealView.swift */; };
-		VC0000010000000000000013 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000013 /* ScoreboardView.swift */; };
-		VC0000010000000000000014 /* VibeCheckGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000014 /* VibeCheckGameOverView.swift */; };
-		VC0000010000000000000015 /* PassDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000015 /* PassDeviceView.swift */; };
-		VC0000010000000000000016 /* VibeCheckRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000016 /* VibeCheckRootView.swift */; };
-		VC0000010000000000000017 /* VibeCheckGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000017 /* VibeCheckGame.swift */; };
 		4A883C5C2F04BC5A0046272B /* MovieChainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */; };
 		4A883C5D2F04BC5A0046272B /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C492F04BC5A0046272B /* GameMode.swift */; };
 		4A883C5E2F04BC5A0046272B /* MovieChainSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */; };
@@ -33,6 +20,16 @@
 		4A883C662F04BC5A0046272B /* ChainLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C482F04BC5A0046272B /* ChainLink.swift */; };
 		4A883C672F04BC5A0046272B /* MovieChainDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C502F04BC5A0046272B /* MovieChainDatabase.swift */; };
 		4A883C692F04BC5A0046272B /* moviechain_core.sqlite.gz in Resources */ = {isa = PBXBuildFile; fileRef = 4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */; };
+		4ADAF4CE2F0CE55A00AE5ED6 /* CompetitionGuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C52F0CE55A00AE5ED6 /* CompetitionGuessingView.swift */; };
+		4ADAF4CF2F0CE55A00AE5ED6 /* CompetitionHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C62F0CE55A00AE5ED6 /* CompetitionHomeView.swift */; };
+		4ADAF4D02F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4CC2F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift */; };
+		4ADAF4D12F0CE55A00AE5ED6 /* CompetitionGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C42F0CE55A00AE5ED6 /* CompetitionGameOverView.swift */; };
+		4ADAF4D22F0CE55A00AE5ED6 /* CompetitionVibeCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C22F0CE55A00AE5ED6 /* CompetitionVibeCheckViewModel.swift */; };
+		4ADAF4D32F0CE55A00AE5ED6 /* CompetitionRevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C92F0CE55A00AE5ED6 /* CompetitionRevealView.swift */; };
+		4ADAF4D42F0CE55A00AE5ED6 /* CompetitionPassDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C72F0CE55A00AE5ED6 /* CompetitionPassDeviceView.swift */; };
+		4ADAF4D52F0CE55A00AE5ED6 /* CompetitionPromptEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C82F0CE55A00AE5ED6 /* CompetitionPromptEntryView.swift */; };
+		4ADAF4D62F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C02F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift */; };
+		4ADAF4D72F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4CA2F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift */; };
 		F10000010000000000000001 /* GamesWithFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000001 /* GamesWithFriendsApp.swift */; };
 		F10000010000000000000003 /* GameHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000003 /* GameHubView.swift */; };
 		F10000010000000000000004 /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000004 /* GameDefinition.swift */; };
@@ -93,6 +90,19 @@
 		F10000010000000000000069 /* BorderBlitzMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000069 /* BorderBlitzMenuView.swift */; };
 		F10000010000000000000070 /* BorderBlitzGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000070 /* BorderBlitzGameView.swift */; };
 		F10000010000000000000080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000080 /* Assets.xcassets */; };
+		VC0000010000000000000001 /* VibeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000001 /* VibeCheckModels.swift */; };
+		VC0000010000000000000002 /* VibeCheckCategoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000002 /* VibeCheckCategoryData.swift */; };
+		VC0000010000000000000003 /* VibeCheckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000003 /* VibeCheckViewModel.swift */; };
+		VC0000010000000000000004 /* SpectrumSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000004 /* SpectrumSliderView.swift */; };
+		VC0000010000000000000008 /* VibeCheckHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000008 /* VibeCheckHomeView.swift */; };
+		VC0000010000000000000012 /* RevealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000012 /* RevealView.swift */; };
+		VC0000010000000000000013 /* ScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000013 /* ScoreboardView.swift */; };
+		VC0000010000000000000014 /* VibeCheckGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000014 /* VibeCheckGameOverView.swift */; };
+		VC0000010000000000000015 /* PassDeviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000015 /* PassDeviceView.swift */; };
+		VC0000010000000000000016 /* VibeCheckRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000016 /* VibeCheckRootView.swift */; };
+		VC0000010000000000000017 /* VibeCheckGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000017 /* VibeCheckGame.swift */; };
+		VC0000010000000000000018 /* PromptEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000018 /* PromptEntryView.swift */; };
+		VC0000010000000000000019 /* TeamGuessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = VC0000020000000000000019 /* TeamGuessingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,7 +110,7 @@
 		4A883C492F04BC5A0046272B /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		4A883C4A2F04BC5A0046272B /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		4A883C4B2F04BC5A0046272B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */ = {isa = PBXFileReference; lastKnownFileType = file; path = "moviechain_core.sqlite.gz"; sourceTree = "<group>"; };
+		4A883C4D2F04BC5A0046272B /* moviechain_core.sqlite.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = moviechain_core.sqlite.gz; sourceTree = "<group>"; };
 		4A883C502F04BC5A0046272B /* MovieChainDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainDatabase.swift; sourceTree = "<group>"; };
 		4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainViewModel.swift; sourceTree = "<group>"; };
 		4A883C542F04BC5A0046272B /* ChainBreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainBreakView.swift; sourceTree = "<group>"; };
@@ -109,6 +119,16 @@
 		4A883C572F04BC5A0046272B /* MovieChainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainRootView.swift; sourceTree = "<group>"; };
 		4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainSetupView.swift; sourceTree = "<group>"; };
 		4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieChainGame.swift; sourceTree = "<group>"; };
+		4ADAF4C02F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionVibeCheckModels.swift; sourceTree = "<group>"; };
+		4ADAF4C22F0CE55A00AE5ED6 /* CompetitionVibeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionVibeCheckViewModel.swift; sourceTree = "<group>"; };
+		4ADAF4C42F0CE55A00AE5ED6 /* CompetitionGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionGameOverView.swift; sourceTree = "<group>"; };
+		4ADAF4C52F0CE55A00AE5ED6 /* CompetitionGuessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionGuessingView.swift; sourceTree = "<group>"; };
+		4ADAF4C62F0CE55A00AE5ED6 /* CompetitionHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionHomeView.swift; sourceTree = "<group>"; };
+		4ADAF4C72F0CE55A00AE5ED6 /* CompetitionPassDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionPassDeviceView.swift; sourceTree = "<group>"; };
+		4ADAF4C82F0CE55A00AE5ED6 /* CompetitionPromptEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionPromptEntryView.swift; sourceTree = "<group>"; };
+		4ADAF4C92F0CE55A00AE5ED6 /* CompetitionRevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionRevealView.swift; sourceTree = "<group>"; };
+		4ADAF4CA2F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionScoreboardView.swift; sourceTree = "<group>"; };
+		4ADAF4CC2F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionVibeCheckRootView.swift; sourceTree = "<group>"; };
 		F00000010000000000000001 /* GamesWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20000010000000000000001 /* GamesWithFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithFriendsApp.swift; sourceTree = "<group>"; };
 		F20000010000000000000003 /* GameHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHubView.swift; sourceTree = "<group>"; };
@@ -175,14 +195,14 @@
 		VC0000020000000000000003 /* VibeCheckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckViewModel.swift; sourceTree = "<group>"; };
 		VC0000020000000000000004 /* SpectrumSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectrumSliderView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000008 /* VibeCheckHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckHomeView.swift; sourceTree = "<group>"; };
-		VC0000020000000000000018 /* PromptEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptEntryView.swift; sourceTree = "<group>"; };
-		VC0000020000000000000019 /* TeamGuessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGuessingView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000012 /* RevealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevealView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000013 /* ScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000014 /* VibeCheckGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckGameOverView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000015 /* PassDeviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDeviceView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000016 /* VibeCheckRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckRootView.swift; sourceTree = "<group>"; };
 		VC0000020000000000000017 /* VibeCheckGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibeCheckGame.swift; sourceTree = "<group>"; };
+		VC0000020000000000000018 /* PromptEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptEntryView.swift; sourceTree = "<group>"; };
+		VC0000020000000000000019 /* TeamGuessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGuessingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +274,47 @@
 				4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */,
 			);
 			path = MovieChain;
+			sourceTree = "<group>";
+		};
+		4ADAF4C12F0CE55A00AE5ED6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAF4C02F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4ADAF4C32F0CE55A00AE5ED6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAF4C22F0CE55A00AE5ED6 /* CompetitionVibeCheckViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4ADAF4CB2F0CE55A00AE5ED6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAF4C42F0CE55A00AE5ED6 /* CompetitionGameOverView.swift */,
+				4ADAF4C52F0CE55A00AE5ED6 /* CompetitionGuessingView.swift */,
+				4ADAF4C62F0CE55A00AE5ED6 /* CompetitionHomeView.swift */,
+				4ADAF4C72F0CE55A00AE5ED6 /* CompetitionPassDeviceView.swift */,
+				4ADAF4C82F0CE55A00AE5ED6 /* CompetitionPromptEntryView.swift */,
+				4ADAF4C92F0CE55A00AE5ED6 /* CompetitionRevealView.swift */,
+				4ADAF4CA2F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4ADAF4CD2F0CE55A00AE5ED6 /* Competition */ = {
+			isa = PBXGroup;
+			children = (
+				4ADAF4C12F0CE55A00AE5ED6 /* Models */,
+				4ADAF4C32F0CE55A00AE5ED6 /* ViewModels */,
+				4ADAF4CB2F0CE55A00AE5ED6 /* Views */,
+				4ADAF4CC2F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift */,
+			);
+			path = Competition;
 			sourceTree = "<group>";
 		};
 		F40000010000000000000001 = {
@@ -527,9 +588,48 @@
 			path = BorderBlitz;
 			sourceTree = "<group>";
 		};
+		F40000010000000000000061 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000061 /* BorderBlitzCountry.swift */,
+				F20000010000000000000062 /* BorderBlitzDifficulty.swift */,
+				F20000010000000000000063 /* BorderBlitzLetterTile.swift */,
+				F20000010000000000000064 /* BorderBlitzScoringConfig.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000062 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000065 /* BorderBlitzCountryDataProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000063 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000066 /* BorderBlitzViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F40000010000000000000064 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F20000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift */,
+				F20000010000000000000068 /* BorderBlitzLetterTilesView.swift */,
+				F20000010000000000000069 /* BorderBlitzMenuView.swift */,
+				F20000010000000000000070 /* BorderBlitzGameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		VC0000030000000000000001 /* VibeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				4ADAF4CD2F0CE55A00AE5ED6 /* Competition */,
 				VC0000020000000000000017 /* VibeCheckGame.swift */,
 				VC0000030000000000000002 /* Models */,
 				VC0000030000000000000003 /* Data */,
@@ -585,44 +685,6 @@
 				VC0000020000000000000004 /* SpectrumSliderView.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		F40000010000000000000061 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F20000010000000000000061 /* BorderBlitzCountry.swift */,
-				F20000010000000000000062 /* BorderBlitzDifficulty.swift */,
-				F20000010000000000000063 /* BorderBlitzLetterTile.swift */,
-				F20000010000000000000064 /* BorderBlitzScoringConfig.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F40000010000000000000062 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				F20000010000000000000065 /* BorderBlitzCountryDataProvider.swift */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		F40000010000000000000063 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				F20000010000000000000066 /* BorderBlitzViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		F40000010000000000000064 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F20000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift */,
-				F20000010000000000000068 /* BorderBlitzLetterTilesView.swift */,
-				F20000010000000000000069 /* BorderBlitzMenuView.swift */,
-				F20000010000000000000070 /* BorderBlitzGameView.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -764,6 +826,16 @@
 				F10000010000000000000066 /* BorderBlitzViewModel.swift in Sources */,
 				F10000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift in Sources */,
 				F10000010000000000000068 /* BorderBlitzLetterTilesView.swift in Sources */,
+				4ADAF4CE2F0CE55A00AE5ED6 /* CompetitionGuessingView.swift in Sources */,
+				4ADAF4CF2F0CE55A00AE5ED6 /* CompetitionHomeView.swift in Sources */,
+				4ADAF4D02F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift in Sources */,
+				4ADAF4D12F0CE55A00AE5ED6 /* CompetitionGameOverView.swift in Sources */,
+				4ADAF4D22F0CE55A00AE5ED6 /* CompetitionVibeCheckViewModel.swift in Sources */,
+				4ADAF4D32F0CE55A00AE5ED6 /* CompetitionRevealView.swift in Sources */,
+				4ADAF4D42F0CE55A00AE5ED6 /* CompetitionPassDeviceView.swift in Sources */,
+				4ADAF4D52F0CE55A00AE5ED6 /* CompetitionPromptEntryView.swift in Sources */,
+				4ADAF4D62F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift in Sources */,
+				4ADAF4D72F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift in Sources */,
 				F10000010000000000000069 /* BorderBlitzMenuView.swift in Sources */,
 				F10000010000000000000070 /* BorderBlitzGameView.swift in Sources */,
 				VC0000010000000000000001 /* VibeCheckModels.swift in Sources */,

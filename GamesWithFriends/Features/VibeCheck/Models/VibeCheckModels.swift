@@ -1,6 +1,38 @@
 import Foundation
 import SwiftUI
 
+// MARK: - Game Mode
+
+enum VibeCheckGameMode: String, CaseIterable, Identifiable {
+    case classic
+    case competition
+
+    var id: String { rawValue }
+
+    var name: String {
+        switch self {
+        case .classic: return "Classic"
+        case .competition: return "Competition"
+        }
+    }
+
+    var description: String {
+        switch self {
+        case .classic:
+            return "Teams work together to match the Vibe Setter's target"
+        case .competition:
+            return "Every player for themselves! Pass the device and guess individually"
+        }
+    }
+
+    var iconName: String {
+        switch self {
+        case .classic: return "person.3.fill"
+        case .competition: return "trophy.fill"
+        }
+    }
+}
+
 // MARK: - Game Configuration
 
 struct VibeCheckSettings: Codable, Equatable {
