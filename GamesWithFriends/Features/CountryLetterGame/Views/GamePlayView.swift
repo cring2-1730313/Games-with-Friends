@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GamePlayView: View {
-    @ObservedObject var viewModel: CountryGameViewModel
+    @Bindable var viewModel: CountryGameViewModel
 
     var body: some View {
         VStack(spacing: 20) {

@@ -134,7 +134,7 @@ struct CompetitionPassDeviceView: View {
 // MARK: - Wrapper for ViewModel Integration
 
 struct CompetitionVibeSetterPassView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
 
     var body: some View {
         if let setter = viewModel.vibeSetter {
@@ -149,7 +149,7 @@ struct CompetitionVibeSetterPassView: View {
 }
 
 struct CompetitionGuesserPassView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
 
     var body: some View {
         if let player = viewModel.currentGuessingPlayer {

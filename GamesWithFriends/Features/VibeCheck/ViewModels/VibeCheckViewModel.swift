@@ -2,23 +2,24 @@ import Foundation
 import SwiftUI
 
 @MainActor
-class VibeCheckViewModel: ObservableObject {
+@Observable
+class VibeCheckViewModel {
 
-    // MARK: - Published Properties
+    // MARK: - Properties
 
-    @Published var settings: VibeCheckSettings = .defaultSettings
-    @Published var competitionSettings: CompetitionVibeCheckSettings = .defaultSettings
-    @Published var teams: [VibeCheckTeam] = []
-    @Published var currentRound: VibeCheckRound?
-    @Published var rounds: [VibeCheckRound] = []
-    @Published var gameState: VibeCheckGameState = .setup
+    var settings: VibeCheckSettings = .defaultSettings
+    var competitionSettings: CompetitionVibeCheckSettings = .defaultSettings
+    var teams: [VibeCheckTeam] = []
+    var currentRound: VibeCheckRound?
+    var rounds: [VibeCheckRound] = []
+    var gameState: VibeCheckGameState = .setup
 
     // Temporary state during round
-    @Published var currentPrompt: String = ""
-    @Published var currentGuessPosition: Double = 0.5
+    var currentPrompt: String = ""
+    var currentGuessPosition: Double = 0.5
 
     // Current guessing team index
-    @Published var currentGuessingTeamIndex: Int = 0
+    var currentGuessingTeamIndex: Int = 0
 
     // Competition mode state - managed by CompetitionVibeCheckViewModel
     // The VibeCheckViewModel just holds the settings for the home screen

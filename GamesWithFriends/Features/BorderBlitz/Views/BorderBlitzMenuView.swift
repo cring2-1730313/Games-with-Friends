@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct BorderBlitzMenuView: View {
-    @ObservedObject var viewModel: BorderBlitzViewModel
+    var viewModel: BorderBlitzViewModel
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {

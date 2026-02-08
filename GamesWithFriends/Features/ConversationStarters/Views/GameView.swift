@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct GameView: View {
-    @ObservedObject var viewModel: GameViewModel
+    var viewModel: GameViewModel
     @Environment(\.dismiss) var dismiss
     @State private var dragOffset: CGSize = .zero
     @State private var showingResetAlert = false

@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import Combine
 
 enum BorderBlitzGameState {
     case menu
@@ -14,27 +13,28 @@ enum BorderBlitzGameState {
 }
 
 @MainActor
-class BorderBlitzViewModel: ObservableObject {
-    // MARK: - Published Properties
-    @Published var gameState: BorderBlitzGameState = .menu
-    @Published var currentCountry: BorderBlitzCountry?
-    @Published var timeRemaining: TimeInterval = 0
-    @Published var totalScore: Int = 0
-    @Published var currentStreak: Int = 0
-    @Published var roundResults: [BorderBlitzRoundResult] = []
-    @Published var selectedDifficulty: BorderBlitzDifficulty = .medium
-    @Published var currentGuess: String = ""
-    @Published var showFeedback: Bool = false
-    @Published var feedbackMessage: String = ""
-    @Published var feedbackIsCorrect: Bool = false
+@Observable
+class BorderBlitzViewModel {
+    // MARK: - Properties
+    var gameState: BorderBlitzGameState = .menu
+    var currentCountry: BorderBlitzCountry?
+    var timeRemaining: TimeInterval = 0
+    var totalScore: Int = 0
+    var currentStreak: Int = 0
+    var roundResults: [BorderBlitzRoundResult] = []
+    var selectedDifficulty: BorderBlitzDifficulty = .medium
+    var currentGuess: String = ""
+    var showFeedback: Bool = false
+    var feedbackMessage: String = ""
+    var feedbackIsCorrect: Bool = false
 
     // MARK: - Private Properties
     private var countryPool: [BorderBlitzCountry] = []
     private var usedCountries: Set<String> = []
-    private var roundTimer: Timer?
+    @ObservationIgnored private var roundTimer: Timer?
     private let scoringConfig = BorderBlitzScoringConfig()
 
-    @Published var letterRevealManager: BorderBlitzLetterRevealManager
+    var letterRevealManager: BorderBlitzLetterRevealManager
 
     // MARK: - Computed Properties
     var gameStarted: Bool {

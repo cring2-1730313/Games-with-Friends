@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SavedStartersView: View {
-    @ObservedObject var viewModel: GameViewModel
+    var viewModel: GameViewModel
     @Environment(\.dismiss) var dismiss
 
     var body: some View {

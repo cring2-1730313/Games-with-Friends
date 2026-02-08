@@ -2,18 +2,19 @@ import Foundation
 import SwiftUI
 
 @MainActor
-class CountryGameViewModel: ObservableObject {
-    @Published var selectedLetter: String?
-    @Published var targetCountries: [Country] = []
-    @Published var guessedCountries: [Country] = []
-    @Published var giveUpCountries: [Country] = []
-    @Published var currentGuess: String = ""
-    @Published var feedbackMessage: String = ""
-    @Published var feedbackType: FeedbackType = .info
-    @Published var hintCount: Int = 0
-    @Published var currentHintedCountry: Country?
-    @Published var hintLevels: [UUID: Int] = [:]
-    @Published var gameState: GameState = .selectingLetter
+@Observable
+class CountryGameViewModel {
+    var selectedLetter: String?
+    var targetCountries: [Country] = []
+    var guessedCountries: [Country] = []
+    var giveUpCountries: [Country] = []
+    var currentGuess: String = ""
+    var feedbackMessage: String = ""
+    var feedbackType: FeedbackType = .info
+    var hintCount: Int = 0
+    var currentHintedCountry: Country?
+    var hintLevels: [UUID: Int] = [:]
+    var gameState: GameState = .selectingLetter
 
     enum GameState {
         case selectingLetter

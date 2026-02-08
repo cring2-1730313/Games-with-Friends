@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TeamGuessingView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    @Bindable var viewModel: VibeCheckViewModel
 
     var body: some View {
         VStack(spacing: 12) {

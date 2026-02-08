@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RevealView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
     @State private var showResults = false
     @State private var revealedPositions = false
 

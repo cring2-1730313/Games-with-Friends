@@ -1,39 +1,38 @@
 import Foundation
 import SwiftUI
-import Combine
 
 @MainActor
-class Name5ViewModel: ObservableObject {
+@Observable
+class Name5ViewModel {
     // MARK: - Configuration
-    @Published var socialContext: SocialContext = .friends
-    @Published var ageGroup: AgeGroup = .adults
-    @Published var timerDuration: Int = 30 // seconds
-    @Published var playerCount: Int = 1
-    @Published var currentPlayerIndex: Int = 0
-    @Published var timerEnabled: Bool = true
+    var socialContext: SocialContext = .friends
+    var ageGroup: AgeGroup = .adults
+    var timerDuration: Int = 30 // seconds
+    var playerCount: Int = 1
+    var currentPlayerIndex: Int = 0
+    var timerEnabled: Bool = true
 
     // MARK: - Game State
-    @Published var gamePhase: GamePhase = .setup
-    @Published var currentPrompt: Name5Prompt?
-    @Published var timeRemaining: Int = 30
-    @Published var isTimerRunning: Bool = false
+    var gamePhase: GamePhase = .setup
+    var currentPrompt: Name5Prompt?
+    var timeRemaining: Int = 30
+    var isTimerRunning: Bool = false
 
     // MARK: - Stats
-    @Published var stats: GameStats = GameStats()
-    @Published var roundResults: [RoundResult] = []
-    @Published var lastResult: RoundResult?
-    @Published var showFollowUpQuestion: Bool = false
+    var stats: GameStats = GameStats()
+    var roundResults: [RoundResult] = []
+    var lastResult: RoundResult?
+    var showFollowUpQuestion: Bool = false
 
     // MARK: - Prompt Management
-    @Published var usedPromptIDs: Set<UUID> = []
-    @Published var availablePrompts: [Name5Prompt] = []
+    var usedPromptIDs: Set<UUID> = []
+    var availablePrompts: [Name5Prompt] = []
 
     // MARK: - Players
-    @Published var players: [PlayerTurn] = []
+    var players: [PlayerTurn] = []
 
     // MARK: - Timer
-    private var timer: Timer?
-    private var cancellables = Set<AnyCancellable>()
+    @ObservationIgnored private var timer: Timer?
 
     // MARK: - Initialization
     init() {

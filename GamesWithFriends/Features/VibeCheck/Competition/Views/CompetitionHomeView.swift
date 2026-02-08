@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CompetitionHomeView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
     @State private var showHowToPlay = false
 
     var body: some View {
@@ -178,7 +178,7 @@ struct CompetitionHomeView: View {
 // MARK: - Player Setup View
 
 struct CompetitionPlayerSetupView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
 
     var body: some View {
         ScrollView {
@@ -239,7 +239,7 @@ struct CompetitionPlayerSetupView: View {
 struct PlayerNameCard: View {
     let playerIndex: Int
     let player: CompetitionPlayer
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
 
     var body: some View {
         HStack(spacing: 12) {

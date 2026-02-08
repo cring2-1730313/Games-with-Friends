@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PromptEntryView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    @Bindable var viewModel: VibeCheckViewModel
     @FocusState private var isPromptFieldFocused: Bool
 
     private var canSubmit: Bool {

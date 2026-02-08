@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @ObservedObject var viewModel: CountryGameViewModel
+    var viewModel: CountryGameViewModel
 
     var body: some View {
         ScrollView {

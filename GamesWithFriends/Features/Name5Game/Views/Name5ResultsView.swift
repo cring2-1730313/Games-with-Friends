@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Name5ResultsView: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         ScrollView {
@@ -222,7 +222,7 @@ struct StatItem: View {
 
 // MARK: - Continue Buttons
 struct ContinueButtons: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         VStack(spacing: 12) {

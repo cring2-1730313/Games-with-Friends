@@ -2,22 +2,23 @@ import Foundation
 import SwiftUI
 
 @MainActor
-class CompetitionVibeCheckViewModel: ObservableObject {
+@Observable
+class CompetitionVibeCheckViewModel {
 
-    // MARK: - Published Properties
+    // MARK: - Properties
 
-    @Published var settings: CompetitionVibeCheckSettings = .defaultSettings
-    @Published var players: [CompetitionPlayer] = []
-    @Published var currentRound: CompetitionRound?
-    @Published var rounds: [CompetitionRound] = []
-    @Published var gameState: CompetitionGameState = .setup
+    var settings: CompetitionVibeCheckSettings = .defaultSettings
+    var players: [CompetitionPlayer] = []
+    var currentRound: CompetitionRound?
+    var rounds: [CompetitionRound] = []
+    var gameState: CompetitionGameState = .setup
 
     // Temporary state during round
-    @Published var currentPrompt: String = ""
-    @Published var currentGuessPosition: Double = 0.5
+    var currentPrompt: String = ""
+    var currentGuessPosition: Double = 0.5
 
     // Current guessing player index (among guessing players, not vibe setter)
-    @Published var currentGuessingPlayerIndex: Int = 0
+    var currentGuessingPlayerIndex: Int = 0
 
     // MARK: - Computed Properties
 

@@ -19,7 +19,7 @@ struct BorderBlitzGame: GameDefinition {
 
 /// Root view that manages navigation between menu and game
 struct BorderBlitzRootView: View {
-    @StateObject private var viewModel = BorderBlitzViewModel()
+    @State private var viewModel = BorderBlitzViewModel()
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {

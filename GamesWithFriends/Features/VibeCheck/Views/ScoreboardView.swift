@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ScoreboardView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
 
     var body: some View {
         VStack(spacing: 24) {

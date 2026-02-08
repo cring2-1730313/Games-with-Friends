@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject private var viewModel = GameViewModel()
+    @State private var viewModel = GameViewModel()
     @State private var showingGame = false
     @State private var showingSettings = false
     @State private var showingSavedStarters = false

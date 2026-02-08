@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct VibeCheckHomeView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
     @Binding var selectedMode: VibeCheckGameMode
     @State private var showHowToPlay = false
 
@@ -364,7 +364,7 @@ struct VibeCheckGameModeCard: View {
 // MARK: - Team Setup View
 
 struct TeamSetupView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
 
     var body: some View {
         ScrollView {
@@ -425,7 +425,7 @@ struct TeamSetupView: View {
 struct TeamSetupCard: View {
     let teamIndex: Int
     let team: VibeCheckTeam
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
 
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {

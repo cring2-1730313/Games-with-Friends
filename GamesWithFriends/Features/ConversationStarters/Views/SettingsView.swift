@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var viewModel: GameViewModel
+    @Bindable var viewModel: GameViewModel
     @Environment(\.dismiss) var dismiss
     @State private var customTimerMinutes: Int = 1
     @State private var customTimerSeconds: Int = 0

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CompetitionPromptEntryView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    @Bindable var viewModel: CompetitionVibeCheckViewModel
     @FocusState private var isPromptFieldFocused: Bool
 
     private var canSubmit: Bool {

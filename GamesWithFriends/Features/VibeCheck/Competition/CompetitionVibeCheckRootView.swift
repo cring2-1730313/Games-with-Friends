@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CompetitionVibeCheckRootView: View {
-    @StateObject private var viewModel = CompetitionVibeCheckViewModel()
+    @State private var viewModel = CompetitionVibeCheckViewModel()
 
     var body: some View {
         Group {

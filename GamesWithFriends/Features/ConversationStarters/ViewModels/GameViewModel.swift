@@ -1,19 +1,19 @@
 import Foundation
 import SwiftUI
-import Combine
 import AVFoundation
 
 @MainActor
-class GameViewModel: ObservableObject {
-    @Published var settings = GameSettings()
-    @Published var currentIndex = 0
-    @Published var filteredStarters: [ConversationStarter] = []
-    @Published var shownStarterIDs: Set<UUID> = []
-    @Published var savedStarterIDs: Set<UUID> = []
-    @Published var timeRemaining: TimeInterval = 60
-    @Published var isTimerRunning = false
+@Observable
+class GameViewModel {
+    var settings = GameSettings()
+    var currentIndex = 0
+    var filteredStarters: [ConversationStarter] = []
+    var shownStarterIDs: Set<UUID> = []
+    var savedStarterIDs: Set<UUID> = []
+    var timeRemaining: TimeInterval = 60
+    var isTimerRunning = false
 
-    private var timer: Timer?
+    @ObservationIgnored private var timer: Timer?
     private let savedStartersKey = "SavedStarters"
     private var audioPlayer: AVAudioPlayer?
 

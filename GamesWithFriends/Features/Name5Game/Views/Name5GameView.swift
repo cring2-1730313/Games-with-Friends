@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Name5GameView: View {
-    @StateObject private var viewModel = Name5ViewModel()
+    @State private var viewModel = Name5ViewModel()
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var scenePhase
 
@@ -61,7 +61,7 @@ struct Name5GameView: View {
 
 // MARK: - Game Over View
 struct GameOverView: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         ScrollView {

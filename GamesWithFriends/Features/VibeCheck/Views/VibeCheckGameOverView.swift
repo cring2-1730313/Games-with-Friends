@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct VibeCheckGameOverView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
     @State private var showConfetti = false
 
     var body: some View {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LetterSelectionView: View {
-    @ObservedObject var viewModel: CountryGameViewModel
+    var viewModel: CountryGameViewModel
 
     let columns = Array(repeating: GridItem(.flexible(), spacing: 8), count: 6)
 

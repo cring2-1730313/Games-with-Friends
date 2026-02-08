@@ -22,8 +22,9 @@ struct BorderBlitzLetterTile: Identifiable {
     }
 }
 
-class BorderBlitzLetterRevealManager: ObservableObject {
-    @Published var tiles: [BorderBlitzLetterTile] = []
+@Observable
+class BorderBlitzLetterRevealManager {
+    var tiles: [BorderBlitzLetterTile] = []
 
     private var revealTimer: Timer?
     private var currentRevealIndex = 0

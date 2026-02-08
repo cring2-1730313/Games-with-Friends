@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CountryLetterGameView: View {
-    @StateObject private var viewModel = CountryGameViewModel()
+    @State private var viewModel = CountryGameViewModel()
 
     var body: some View {
         ZStack {

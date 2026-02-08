@@ -134,7 +134,7 @@ struct PassDeviceView: View {
 // MARK: - Wrapper for ViewModel Integration
 
 struct PromptSetterPassView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
 
     var body: some View {
         if let setter = viewModel.promptSetterTeam {
@@ -149,7 +149,7 @@ struct PromptSetterPassView: View {
 }
 
 struct GuessingTeamPassView: View {
-    @ObservedObject var viewModel: VibeCheckViewModel
+    var viewModel: VibeCheckViewModel
 
     var body: some View {
         if let team = viewModel.currentGuessingTeam {

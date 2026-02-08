@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Name5SetupView: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    @Bindable var viewModel: Name5ViewModel
 
     var body: some View {
         ScrollView {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct VibeCheckRootView: View {
-    @StateObject private var classicViewModel = VibeCheckViewModel()
+    @State private var classicViewModel = VibeCheckViewModel()
     @State private var selectedMode: VibeCheckGameMode = .classic
     @State private var competitionViewModel: CompetitionVibeCheckViewModel?
 

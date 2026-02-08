@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct BorderBlitzGameView: View {
-    @ObservedObject var viewModel: BorderBlitzViewModel
+    @Bindable var viewModel: BorderBlitzViewModel
     @FocusState private var isInputFocused: Bool
 
     var body: some View {

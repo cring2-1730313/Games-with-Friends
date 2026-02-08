@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Name5PlayView: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         ZStack {
@@ -176,7 +176,7 @@ struct PromptCard: View {
 
 // MARK: - Ready Buttons
 struct ReadyButtons: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         VStack(spacing: 16) {
@@ -227,7 +227,7 @@ struct ReadyButtons: View {
 
 // MARK: - Playing Buttons
 struct PlayingButtons: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         VStack(spacing: 12) {
@@ -293,7 +293,7 @@ struct PlayingButtons: View {
 
 // MARK: - Paused Buttons
 struct PausedButtons: View {
-    @ObservedObject var viewModel: Name5ViewModel
+    var viewModel: Name5ViewModel
 
     var body: some View {
         VStack(spacing: 16) {

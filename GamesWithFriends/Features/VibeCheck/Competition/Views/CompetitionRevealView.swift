@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CompetitionRevealView: View {
-    @ObservedObject var viewModel: CompetitionVibeCheckViewModel
+    var viewModel: CompetitionVibeCheckViewModel
     @State private var showResults = false
     @State private var revealedPositions = false
 
