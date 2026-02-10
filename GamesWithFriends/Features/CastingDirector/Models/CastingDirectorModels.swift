@@ -72,7 +72,7 @@ struct Clue: Identifiable, Equatable {
 
 // MARK: - Difficulty
 
-enum Difficulty: String, CaseIterable {
+enum CastingDirectorDifficulty: String, CaseIterable {
     case easy = "Easy"
     case medium = "Medium"
     case hard = "Hard"
@@ -119,7 +119,7 @@ enum Difficulty: String, CaseIterable {
 
 // MARK: - Game Mode
 
-enum GameMode: String, CaseIterable {
+enum CastingDirectorMode: String, CaseIterable {
     case solo = "Solo"
     case passAndPlay = "Pass & Play"
     
@@ -135,7 +135,7 @@ enum GameMode: String, CaseIterable {
 
 // MARK: - Game Phase
 
-enum GamePhase {
+enum CastingDirectorPhase {
     case setup
     case playing
     case roundResult

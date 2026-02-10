@@ -61,3 +61,11 @@ struct Actor: Identifiable, Equatable, Hashable {
 
     var id: String { nconst }
 }
+
+/// Director data from the SQLite database
+struct Director: Identifiable, Equatable, Hashable {
+    let nconst: String
+    let name: String
+
+    var id: String { nconst }
+}

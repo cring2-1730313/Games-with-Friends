@@ -540,6 +540,159 @@ final class MovieChainDatabase: ObservableObject {
         return results
     }
 
+    // MARK: - Director Search
+
+    /// Search for directors by name prefix
+    /// - Parameters:
+    ///   - query: Search query (prefix match)
+    ///   - limit: Maximum results to return
+    /// - Returns: Array of matching directors
+    func searchDirectors(query: String, limit: Int = 10) -> [Director] {
+        guard isLoaded, let db = db else { return [] }
+
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return [] }
+
+        // Use FTS5 for prefix matching
+        let ftsQuery = trimmedQuery
+            .components(separatedBy: .whitespaces)
+            .filter { !$0.isEmpty }
+            .map { "\($0)*" }
+            .joined(separator: " ")
+
+        let sql = """
+            SELECT d.nconst, d.name
+            FROM directors d
+            JOIN directors_fts fts ON d.rowid = fts.rowid
+            WHERE directors_fts MATCH ?
+            LIMIT ?
+            """
+
+        var statement: OpaquePointer?
+        var results: [Director] = []
+
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, ftsQuery, -1, SQLITE_TRANSIENT)
+            sqlite3_bind_int(statement, 2, Int32(limit))
+
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let director = directorFromStatement(statement!)
+                results.append(director)
+            }
+        }
+
+        sqlite3_finalize(statement)
+        return results
+    }
+
+    /// Get a director by their ID
+    func getDirector(byId nconst: String) -> Director? {
+        guard isLoaded, let db = db else { return nil }
+
+        let sql = "SELECT nconst, name FROM directors WHERE nconst = ?"
+        var statement: OpaquePointer?
+        var result: Director?
+
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, nconst, -1, SQLITE_TRANSIENT)
+
+            if sqlite3_step(statement) == SQLITE_ROW {
+                result = directorFromStatement(statement!)
+            }
+        }
+
+        sqlite3_finalize(statement)
+        return result
+    }
+
+    /// Get all directors of a specific movie
+    func getDirectorsOfMovie(movieId: String) -> [Director] {
+        guard isLoaded, let db = db else { return [] }
+
+        let sql = """
+            SELECT d.nconst, d.name
+            FROM directors d
+            JOIN movie_directors md ON d.nconst = md.nconst
+            WHERE md.tconst = ?
+            """
+
+        var statement: OpaquePointer?
+        var results: [Director] = []
+
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, movieId, -1, SQLITE_TRANSIENT)
+
+            while sqlite3_step(statement) == SQLITE_ROW {
+                results.append(directorFromStatement(statement!))
+            }
+        }
+
+        sqlite3_finalize(statement)
+        return results
+    }
+
+    /// Get all movies by a specific director
+    func getMoviesByDirector(directorId: String) -> [Movie] {
+        guard isLoaded, let db = db else { return [] }
+
+        let sql = """
+            SELECT m.tconst, m.title, m.year, m.genres, m.rating, m.votes
+            FROM movies m
+            JOIN movie_directors md ON m.tconst = md.tconst
+            WHERE md.nconst = ?
+            ORDER BY m.votes DESC
+            """
+
+        var statement: OpaquePointer?
+        var results: [Movie] = []
+
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, directorId, -1, SQLITE_TRANSIENT)
+
+            while sqlite3_step(statement) == SQLITE_ROW {
+                results.append(movieFromStatement(statement!))
+            }
+        }
+
+        sqlite3_finalize(statement)
+        return results
+    }
+
+    // MARK: - Qualified Actor Query (Casting Director)
+
+    /// Get actor nconst IDs that have 5+ movies total, with at least 3 having 50,000+ votes.
+    /// This runs as a single efficient SQL query using aggregation.
+    func getQualifiedActorIds(minMovies: Int = 5, minHighVoteMovies: Int = 3, minVotes: Int = 50000) -> [String] {
+        guard isLoaded, let db = db else { return [] }
+
+        let sql = """
+            SELECT ma.nconst,
+                   COUNT(*) AS total_movies,
+                   SUM(CASE WHEN m.votes >= ? THEN 1 ELSE 0 END) AS high_vote_movies
+            FROM movie_actors ma
+            JOIN movies m ON ma.tconst = m.tconst
+            GROUP BY ma.nconst
+            HAVING total_movies >= ? AND high_vote_movies >= ?
+            """
+
+        var statement: OpaquePointer?
+        var results: [String] = []
+
+        if sqlite3_prepare_v2(db, sql, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_int(statement, 1, Int32(minVotes))
+            sqlite3_bind_int(statement, 2, Int32(minMovies))
+            sqlite3_bind_int(statement, 3, Int32(minHighVoteMovies))
+
+            while sqlite3_step(statement) == SQLITE_ROW {
+                let nconst = String(cString: sqlite3_column_text(statement, 0))
+                results.append(nconst)
+            }
+        }
+
+        sqlite3_finalize(statement)
+        return results
+    }
+
     // MARK: - Helper Methods
 
     private func movieFromStatement(_ statement: OpaquePointer) -> Movie {
@@ -569,6 +722,16 @@ final class MovieChainDatabase: ObservableObject {
             nconst: nconst,
             name: name,
             knownFor: knownFor
+        )
+    }
+
+    private func directorFromStatement(_ statement: OpaquePointer) -> Director {
+        let nconst = String(cString: sqlite3_column_text(statement, 0))
+        let name = String(cString: sqlite3_column_text(statement, 1))
+
+        return Director(
+            nconst: nconst,
+            name: name
         )
     }
 }

@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A3F83BB2F3BC7C900F29F5F /* CastingDirectorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F83BA2F3BC7C900F29F5F /* CastingDirectorModels.swift */; };
+		570D24ADEFC5556E70C7A155 /* CastingDirectorGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4867B2C553A7BCE8B005A8 /* CastingDirectorGame.swift */; };
+		5939DEE3229C784E968DBAFD /* ClueGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C115CCFFDD4E4E3C316FC94 /* ClueGenerator.swift */; };
+		BDB151554BFD4DC2C8609769 /* CastingDirectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711EBF55D2123D46A4134134 /* CastingDirectorViewModel.swift */; };
+		8500BD5EE18A2ABBC54C25E5 /* CastingDirectorRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6426E0F9D2A5C1A3A922CD4A /* CastingDirectorRootView.swift */; };
+		EC6DF7F939F1429F53979E41 /* CastingDirectorSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF032457008CACCB62515BA /* CastingDirectorSetupView.swift */; };
+		06FC50D097F5DC0D0B5EE7EC /* ClueBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DE79220ABF60EDD425B86DF /* ClueBoardView.swift */; };
+		92A37E92A10920D753D31418 /* ClueChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF84BA1F17D93F51186B46 /* ClueChipView.swift */; };
+		0013CC9E2603BF0F03A2CA62 /* GuessOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E24AF47ECEE9765542BD20 /* GuessOverlayView.swift */; };
+		6FE6F6AAC29D1617EDF874D3 /* RoundResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83740FBD51D88D6DE3842BD /* RoundResultsView.swift */; };
+		825F7A053E36D71162F92F71 /* CastingDirectorGameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771CD3B545EF4CF697598FAD /* CastingDirectorGameOverView.swift */; };
 		4A883C5C2F04BC5A0046272B /* MovieChainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C522F04BC5A0046272B /* MovieChainViewModel.swift */; };
 		4A883C5D2F04BC5A0046272B /* GameMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C492F04BC5A0046272B /* GameMode.swift */; };
 		4A883C5E2F04BC5A0046272B /* MovieChainSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A883C582F04BC5A0046272B /* MovieChainSetupView.swift */; };
@@ -31,6 +42,8 @@
 		4ADAF4D62F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4C02F0CE55A00AE5ED6 /* CompetitionVibeCheckModels.swift */; };
 		4ADAF4D72F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADAF4CA2F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift */; };
 		4AF67CBC2F37D936009A3801 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AF67CBB2F37D936009A3801 /* StoreKit.framework */; };
+		4AF67CBF2F3BC4E1009A3801 /* add_directors.py in Resources */ = {isa = PBXBuildFile; fileRef = 4AF67CBE2F3BC4E1009A3801 /* add_directors.py */; };
+		4AF67CC12F3BC535009A3801 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4AF67CC02F3BC535009A3801 /* README.md */; };
 		F10000010000000000000001 /* GamesWithFriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000001 /* GamesWithFriendsApp.swift */; };
 		F10000010000000000000003 /* GameHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000003 /* GameHubView.swift */; };
 		F10000010000000000000004 /* GameDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000010000000000000004 /* GameDefinition.swift */; };
@@ -107,6 +120,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A3F83BA2F3BC7C900F29F5F /* CastingDirectorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorModels.swift; sourceTree = "<group>"; };
+		FE4867B2C553A7BCE8B005A8 /* CastingDirectorGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorGame.swift; sourceTree = "<group>"; };
+		8C115CCFFDD4E4E3C316FC94 /* ClueGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueGenerator.swift; sourceTree = "<group>"; };
+		711EBF55D2123D46A4134134 /* CastingDirectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorViewModel.swift; sourceTree = "<group>"; };
+		6426E0F9D2A5C1A3A922CD4A /* CastingDirectorRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorRootView.swift; sourceTree = "<group>"; };
+		3AF032457008CACCB62515BA /* CastingDirectorSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorSetupView.swift; sourceTree = "<group>"; };
+		5DE79220ABF60EDD425B86DF /* ClueBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueBoardView.swift; sourceTree = "<group>"; };
+		33BF84BA1F17D93F51186B46 /* ClueChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClueChipView.swift; sourceTree = "<group>"; };
+		22E24AF47ECEE9765542BD20 /* GuessOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessOverlayView.swift; sourceTree = "<group>"; };
+		C83740FBD51D88D6DE3842BD /* RoundResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundResultsView.swift; sourceTree = "<group>"; };
+		771CD3B545EF4CF697598FAD /* CastingDirectorGameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastingDirectorGameOverView.swift; sourceTree = "<group>"; };
 		4A883C482F04BC5A0046272B /* ChainLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChainLink.swift; sourceTree = "<group>"; };
 		4A883C492F04BC5A0046272B /* GameMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMode.swift; sourceTree = "<group>"; };
 		4A883C4A2F04BC5A0046272B /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
@@ -131,6 +155,8 @@
 		4ADAF4CA2F0CE55A00AE5ED6 /* CompetitionScoreboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionScoreboardView.swift; sourceTree = "<group>"; };
 		4ADAF4CC2F0CE55A00AE5ED6 /* CompetitionVibeCheckRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionVibeCheckRootView.swift; sourceTree = "<group>"; };
 		4AF67CBB2F37D936009A3801 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		4AF67CBE2F3BC4E1009A3801 /* add_directors.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = add_directors.py; sourceTree = "<group>"; };
+		4AF67CC02F3BC535009A3801 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F00000010000000000000001 /* GamesWithFriends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamesWithFriends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20000010000000000000001 /* GamesWithFriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesWithFriendsApp.swift; sourceTree = "<group>"; };
 		F20000010000000000000003 /* GameHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHubView.swift; sourceTree = "<group>"; };
@@ -219,6 +245,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A3F83B52F3BC7B100F29F5F /* CastingDirector */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F83B62F3BC7B100F29F5F /* Models */,
+				4A3F83B72F3BC7B200F29F5F /* Services */,
+				4A3F83B82F3BC7B200F29F5F /* ViewModels */,
+				4A3F83B92F3BC7B200F29F5F /* Views */,
+				FE4867B2C553A7BCE8B005A8 /* CastingDirectorGame.swift */,
+			);
+			path = CastingDirector;
+			sourceTree = "<group>";
+		};
+		4A3F83B62F3BC7B100F29F5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F83BA2F3BC7C900F29F5F /* CastingDirectorModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4A3F83B72F3BC7B200F29F5F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8C115CCFFDD4E4E3C316FC94 /* ClueGenerator.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A3F83B82F3BC7B200F29F5F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				711EBF55D2123D46A4134134 /* CastingDirectorViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4A3F83B92F3BC7B200F29F5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6426E0F9D2A5C1A3A922CD4A /* CastingDirectorRootView.swift */,
+				3AF032457008CACCB62515BA /* CastingDirectorSetupView.swift */,
+				5DE79220ABF60EDD425B86DF /* ClueBoardView.swift */,
+				33BF84BA1F17D93F51186B46 /* ClueChipView.swift */,
+				22E24AF47ECEE9765542BD20 /* GuessOverlayView.swift */,
+				C83740FBD51D88D6DE3842BD /* RoundResultsView.swift */,
+				771CD3B545EF4CF697598FAD /* CastingDirectorGameOverView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4A883C4C2F04BC5A0046272B /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +351,7 @@
 				4A883C532F04BC5A0046272B /* ViewModels */,
 				4A883C592F04BC5A0046272B /* Views */,
 				4A883C5A2F04BC5A0046272B /* MovieChainGame.swift */,
+				4AF67CBD2F3BC4AA009A3801 /* Scripts */,
 			);
 			path = MovieChain;
 			sourceTree = "<group>";
@@ -328,6 +405,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4AF67CBD2F3BC4AA009A3801 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				4AF67CBE2F3BC4E1009A3801 /* add_directors.py */,
+				4AF67CC02F3BC535009A3801 /* README.md */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		F40000010000000000000001 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +452,7 @@
 				F40000010000000000000050 /* Name5Game */,
 				F40000010000000000000060 /* BorderBlitz */,
 				VC0000030000000000000001 /* VibeCheck */,
+				4A3F83B52F3BC7B100F29F5F /* CastingDirector */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -759,6 +846,8 @@
 			files = (
 				4A883C692F04BC5A0046272B /* moviechain_core.sqlite.gz in Resources */,
 				F10000010000000000000080 /* Assets.xcassets in Resources */,
+				4AF67CC12F3BC535009A3801 /* README.md in Resources */,
+				4AF67CBF2F3BC4E1009A3801 /* add_directors.py in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -836,6 +925,17 @@
 				F10000010000000000000064 /* BorderBlitzScoringConfig.swift in Sources */,
 				F10000010000000000000065 /* BorderBlitzCountryDataProvider.swift in Sources */,
 				F10000010000000000000066 /* BorderBlitzViewModel.swift in Sources */,
+				4A3F83BB2F3BC7C900F29F5F /* CastingDirectorModels.swift in Sources */,
+				570D24ADEFC5556E70C7A155 /* CastingDirectorGame.swift in Sources */,
+				5939DEE3229C784E968DBAFD /* ClueGenerator.swift in Sources */,
+				BDB151554BFD4DC2C8609769 /* CastingDirectorViewModel.swift in Sources */,
+				8500BD5EE18A2ABBC54C25E5 /* CastingDirectorRootView.swift in Sources */,
+				EC6DF7F939F1429F53979E41 /* CastingDirectorSetupView.swift in Sources */,
+				06FC50D097F5DC0D0B5EE7EC /* ClueBoardView.swift in Sources */,
+				92A37E92A10920D753D31418 /* ClueChipView.swift in Sources */,
+				0013CC9E2603BF0F03A2CA62 /* GuessOverlayView.swift in Sources */,
+				6FE6F6AAC29D1617EDF874D3 /* RoundResultsView.swift in Sources */,
+				825F7A053E36D71162F92F71 /* CastingDirectorGameOverView.swift in Sources */,
 				F10000010000000000000067 /* BorderBlitzCountrySilhouetteView.swift in Sources */,
 				F10000010000000000000068 /* BorderBlitzLetterTilesView.swift in Sources */,
 				4ADAF4CE2F0CE55A00AE5ED6 /* CompetitionGuessingView.swift in Sources */,
